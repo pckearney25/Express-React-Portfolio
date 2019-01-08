@@ -1,24 +1,75 @@
-.App {
+body,
+html {
+  height: 100vh;
+}
+
+body {
+  background-image: url("./assets/images/rudbeckia.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 3em;
+}
+h2 {
+  font-size: 2.8em;
+}
+
+h3 {
+  font-size: 1.6em;
+}
+
+h4 {
+  font-size: 1.4em;
+}
+
+.section-paragraph {
+  font-family: "Cormorant Garamond", serif;
+  color: black;
+  font-size: 1.4em;
+  line-height: 1.4em;
+
+  padding: 0px 20px 20px 20px;
+  text-align: justify;
+}
+
+.section-paragraph span {
+  font-weight: 700;
+}
+
+.section-paragraph a {
+  color: #58b00a;
+  text-decoration: none;
+}
+
+.section-paragraph a:hover {
+  color: #d1834e;
+}
+
+.section-list {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0px 40px 40px 40px;
+  font-family: "Cormorant SC", serif;
+  font-size: 1.4em;
+}
+
+.section-list li {
+  flex-grow: 1;
   text-align: center;
+  border-right: 1px solid black;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.section-list li:last-child {
+  border-right: none;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.section-list li a {
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px solid black;
 }

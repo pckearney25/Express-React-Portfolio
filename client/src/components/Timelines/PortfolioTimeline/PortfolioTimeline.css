@@ -1,0 +1,95 @@
+@import "../../../assets/css/VerticalTimeline.css";
+@import "../../../assets/css/VerticalTimelineElement.css";
+
+.timeline-div {
+  background-color: #14390a;
+  margin: 0px 20px 20px 20px;
+  border-radius: 0.25em;
+  border: 2px solid #16270f;
+}
+
+.fa-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.timeline-project-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.timeline-project-image {
+  height: 200px;
+  width: 200px;
+  border: 1px solid #16270f;
+}
+.timeline-project-container-div {
+  margin-left: 10px;
+}
+.timeline-project-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.timeline-project-paragraph span {
+  font-weight: 700;
+}
+
+.timeline-buttons-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.timeline-repo-btn,
+.timeline-deployed-btn {
+  width: 128px;
+  height: 42px;
+  border-radius: 0.25em;
+  margin-top: 10px;
+  margin-right: 10px;
+  border: 1px solid #4f1192;
+  color: white;
+  background-color: #4f1192;
+}
+
+.timeline-repo-btn a,
+.timeline-deployed-btn a {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5em;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.timeline-repo-btn:hover,
+.timeline-repo-btn:focus,
+.timeline-repo-btn:active {
+  background-color: #c84a59;
+}
+
+.timeline-deployed-btn:hover,
+.timeline-deployed-btn:focus,
+.timeline-deployed-btn:active {
+  background-color: #d1834e;
+}
+
+@media only screen and (max-width: 1119px) {
+  .timeline-project-image {
+    height: 150px;
+    width: 150px;
+    border: 1px solid #16270f;
+  }
+}
+
+@media only screen and (max-width: 559px) {
+  .timeline-project-container {
+    flex-wrap: wrap;
+  }
+
+  .timeline-project-container-div {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+}

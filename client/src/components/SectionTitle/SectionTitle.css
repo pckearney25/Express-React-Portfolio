@@ -1,0 +1,45 @@
+.section-div {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  margin: 20px 0px 20px 0px;
+}
+
+.section-title-div,
+.section-img-div {
+  flex-grow: 1;
+}
+
+.section-image {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #16270f;
+  display: block;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: "Cormorant SC", serif;
+  color: black;
+  padding-top: 70px;
+  display: block;
+}
+
+.section-line-div {
+  border-top: #16270f 2px solid;
+  margin: 0px 20px 20px 20px;
+}
+@media all and (max-width: 670px) {
+  .section-title-div,
+  .section-img-div {
+    width: 100%;
+  }
+  .section-title {
+    padding-top: 20px;
+    text-align: center;
+  }
+}

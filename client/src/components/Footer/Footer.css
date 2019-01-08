@@ -1,0 +1,23 @@
+footer {
+  background-color: beige;
+  font-family: "Cormorant SC", serif;
+  font-size: 1.4em;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  border-top: 2px solid #16270f;
+  height: 60px;
+}
+
+.soc-media-div {
+  margin-top: 5px;
+}
+
+.soc-media-links {
+  margin: 0px 10px 0px 10px;
+}
+
+.fab {
+  font-size: 36px;
+  color: #16270f;
+}

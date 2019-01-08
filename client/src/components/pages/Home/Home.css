@@ -1,0 +1,54 @@
+#quote-container {
+  height: 90vh;
+  width: 100%;
+  background: black;
+}
+
+#quote-container h2 {
+  font-size: 1.4em;
+  font-family: "Cormorant Garamond", serif;
+  color: white;
+  font-style: italic;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+#quote-container:first-child {
+  padding-top: 40px;
+}
+
+.quote1-appear {
+  opacity: 0;
+}
+
+.quote1-appear.quote1-appear-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in 500ms;
+}
+
+.quote2-appear {
+  opacity: 0;
+}
+
+.quote2-appear.quote2-appear-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in 2000ms;
+}
+
+.quote3-appear {
+  opacity: 0;
+}
+
+.quote3-appear.quote3-appear-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in 3500ms;
+}
+
+.boxer-appear {
+  opacity: 1;
+}
+
+.boxer-appear.boxer-appear-active {
+  opacity: 0;
+  transition: opacity 3500ms ease-in 5000ms;
+}
