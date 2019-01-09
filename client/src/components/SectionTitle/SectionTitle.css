@@ -6,9 +6,11 @@
   margin: 20px 0px 20px 0px;
 }
 
-.section-title-div,
 .section-img-div {
-  flex-grow: 1;
+  width: 30%;
+}
+.section-title-div {
+  width: 70%;
 }
 
 .section-image {
@@ -25,13 +27,29 @@
 .section-title {
   font-family: "Cormorant SC", serif;
   color: black;
-  padding-top: 70px;
+  padding-top: 30px;
   display: block;
+}
+
+.section-quote {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 1.5em;
+  padding: 10px 20px 0px 0px;
 }
 
 .section-line-div {
   border-top: #16270f 2px solid;
   margin: 0px 20px 20px 20px;
+}
+
+@media all and (max-width: 960px) {
+  .section-img-div {
+    width: 40%;
+  }
+  .section-title-div {
+    width: 60%;
+  }
 }
 @media all and (max-width: 670px) {
   .section-title-div,
@@ -39,7 +57,12 @@
     width: 100%;
   }
   .section-title {
-    padding-top: 20px;
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  .section-quote {
+    padding: 10px 20px 0px 20px;
     text-align: center;
   }
 }

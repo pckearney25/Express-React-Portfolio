@@ -13,10 +13,11 @@ class Blog extends React.Component {
         <SectionTitle
           src={require("../../../assets/images/coneflower.jpg")}
           sectiontitle={"Blog"}
+          quote={`"In my writing, I like combining ideas from different fields to create original works."`}
         />
         <p className="section-paragraph">
           <span>{`About the Blog: `}</span>
-          {`Read on to learn more about my journey into web-development and my studies of entrepreneurship, scientice, and environmental sustainability. To follow up with me on any post, message me over on the “Contact” page.`}
+          {`Read on to learn more about my journey into web-development and my studies of entrepreneurship, science, and environmental sustainability. To follow up with me on any post, message me over on the “Contact” page.`}
         </p>
         <p className="section-paragraph">
           <span>{`Recent Posts: `}</span>

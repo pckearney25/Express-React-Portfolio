@@ -15,6 +15,7 @@ class Portfolio extends React.Component {
         <SectionTitle
           src={require("../../../assets/images/butterflyweed.jpg")}
           sectiontitle={"Portfolio"}
+          quote={`"I strive to build clean, enjoyable, and informative user experiences."`}
         />
         <p className="section-paragraph">
           <span>About the Portfolio: </span> Presented below are a few of the

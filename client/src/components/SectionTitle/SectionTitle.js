@@ -9,6 +9,7 @@ const SectionTitle = props => (
       </div>
       <div className="section-title-div">
         <h2 className="section-title">{props.sectiontitle}</h2>
+        <p className="section-quote">{props.quote}</p>
       </div>
     </div>
     <div className="section-line-div" />

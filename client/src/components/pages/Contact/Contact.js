@@ -23,6 +23,7 @@ class Contact extends React.Component {
         <SectionTitle
           src={require("../../../assets/images/bees.jpg")}
           sectiontitle={"Contact"}
+          quote={`"Write me and let's do business. I'm always up for discussing ideas and opportunities."`}
         />
         <div className="section-content">
           <p className="section-paragraph">

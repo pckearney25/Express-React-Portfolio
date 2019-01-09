@@ -15,6 +15,7 @@ class About extends React.Component {
           <SectionTitle
             src={require("../../../assets/images/author.jpg")}
             sectiontitle={"About Me"}
+            quote={`"I want my work to help create the tech products and services needed for a better world."`}
           />
           <p className="section-paragraph">
             <span>{`Career: `}</span>
