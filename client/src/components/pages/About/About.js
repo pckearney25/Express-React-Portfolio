@@ -15,16 +15,11 @@ class About extends React.Component {
           <SectionTitle
             src={require("../../../assets/images/author.jpg")}
             sectiontitle={"About Me"}
-            quote={`"I want my work to help create the tech products and services needed for a better world."`}
+            quote={`"I want my work to help create the tech products and services needed for a healthier and more sustainable world."`}
           />
           <p className="section-paragraph">
             <span>{`Career: `}</span>
-            {`In my work as a both a PhD
-        pharmaceutical research scientist and an entrepreneur, I’ve seen a need
-        for making information more useful to everyday people. In the next phase
-        of my career, I want to help companies, organizations, and individuals
-        better utilize information to create the products we’ll need in order to
-        build a healthier and more sustainable world.`}
+            {`After earning a PhD in chemistry from Caltech, I’ve worked as a laboratory scientist, a pharmaceutical research director, and an entrepreneur. Throughout my work I’ve seen a need for making information more useful to everyday people. In the next phase of my career, I want to help companies, organizations, and individuals better utilize information to create the products we’ll need in order to build a healthier and more sustainable world.`}
           </p>
 
           <p className="section-paragraph">
@@ -50,9 +45,7 @@ class About extends React.Component {
         in addition to web-development I am also studying to become a certified
         master gardener through the University of Missouri Extension Program. I'm 
        currently developing Bee-Z Street, a home gardening
-        application that I’m working on with `}
-            <a href="https://www.samanthamccallfp18.com/">{`Samantha McCall`}</a>
-            {`,
+        application that I’m working on with Samantha McCall,
         whom I met during the KU program. I'm also developing ideas to
         make fitness and nutrition more generally appealing to men of all walks
         of life.`}

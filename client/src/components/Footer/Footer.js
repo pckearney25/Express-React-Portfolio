@@ -11,7 +11,7 @@ library.add(fab, faLinkedin, faGithubSquare, faStackOverflow);
 
 const Footer = () => (
   <footer>
-    <div>{`© 2018 Patrick Kearney`}</div>
+    <div>{`© 2019 Patrick Kearney`}</div>
     <div className="soc-media-div">
       <a
         className="soc-media-links hvr-grow"
