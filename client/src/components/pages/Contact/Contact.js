@@ -5,7 +5,7 @@ import "./Contact.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDove } from "@fortawesome/free-solid-svg-icons";
-import axios from "axios";
+import API from "../../../utils/API";
 
 library.add(faDove);
 
@@ -26,6 +26,19 @@ class Contact extends React.Component {
     window.scrollTo(0, 0);
   }
 
+  mailResponse = response => {
+    if (response.data.msg === "success") {
+      this.setState({ messageStatus: "Message Sent." });
+      this.resetForm();
+    } else if (response.data.msg === "fail") {
+      this.setState({ messageStatus: "Uh. Oh. Message failed to send." });
+    }
+  };
+
+  sendMail = mailData => {
+    API.sendMail(mailData).then(response => this.mailResponse(response));
+  };
+
   handleInputChange(event) {
     // Getting the value and name of the input which triggered the change
     const { name, value } = event.target;
@@ -38,32 +51,18 @@ class Contact extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const name = this.state.name;
-    const email = this.state.email;
-    const subject = this.state.subject;
-    const message = this.state.message;
+
+    const mailData = {
+      name: this.state.name,
+      email: this.state.email,
+      subject: this.state.subject,
+      message: this.state.message
+    };
+    this.sendMail(mailData);
+
     //Note. These might be changed to type const name = document.getElementById('name').value if state
     //not used in the checking portions.
     //TODO: Will add client side checking to ensure field completion and CSS changes later.
-    //TODO: Will work on importing (API from utils eventually)
-
-    axios({
-      method: "POST",
-      url: "http://localhost:3002/send",
-      data: {
-        name: name,
-        email: email,
-        subject: subject,
-        messsage: message
-      }
-    }).then(response => {
-      if (response.data.msg === "success") {
-        this.setState({ messageStatus: "Message Sent." });
-        this.resetForm();
-      } else if (response.data.msg === "fail") {
-        this.setState({ messageStatus: "Uh. Oh. Message failed to send." });
-      }
-    });
   }
 
   resetForm() {
