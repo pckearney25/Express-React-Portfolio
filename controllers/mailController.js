@@ -34,7 +34,6 @@ module.exports = {
     var mail = {
       from: name,
       //to: `"RECEIVING_EMAIL_ADDRESS_GOES_HERE"`, //Change to email address that you want to receive messages on
-      to: "pckearney@yahoo.com", //Change to email address that you want to receive messages on
       subject: subject,
       text: content
     };
