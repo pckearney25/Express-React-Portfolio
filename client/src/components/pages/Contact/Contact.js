@@ -66,7 +66,7 @@ class Contact extends React.Component {
   }
 
   resetForm() {
-    document.getElementById("contact-form").reset();
+    this.setState({ name: "", email: "", subject: "", message: "" });
   }
 
   render() {
