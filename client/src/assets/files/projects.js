@@ -9,10 +9,10 @@ export default [
   {
     id: "0",
     date: "November 2018",
-    title: "React Portfolio",
-    description: "My New Personal Website Created with React",
+    title: "Express-React Portfolio",
+    description: "My New Personal Website Created with Express-React-Node",
     highlights:
-      "React, ReactCSSTransitionGroup, ReactVerticalTimeline, ReactFontAwesome, CSS Flexbox, Form Submission via PHP.",
+      "React, Express, Form Submission via Nodemailer, Media Responsive, ReactCSSTransitionGroup, ReactVerticalTimeline, ReactFontAwesome, CSS Flexbox.",
     deployed: "https://pckearney.com",
     repo: "https://github.com/pckearney25/React-Portfolio",
     imgSrc: require("../../assets/images/portfolio.jpg"),
