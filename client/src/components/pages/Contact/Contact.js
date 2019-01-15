@@ -4,16 +4,16 @@ import SectionTitle from "../../SectionTitle";
 import "./Contact.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDove } from "@fortawesome/free-solid-svg-icons";
+import { faDove, faSun, faCloudRain } from "@fortawesome/free-solid-svg-icons";
 import API from "../../../utils/API";
 
-library.add(faDove);
+library.add(faDove, faSun, faCloudRain);
 
 class Contact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      messageStatus: "New Message",
+      messageStatus: "fail",
       name: "",
       email: "",
       subject: "",
@@ -28,10 +28,14 @@ class Contact extends React.Component {
 
   mailResponse = response => {
     if (response.data.msg === "success") {
-      this.setState({ messageStatus: "Message Sent." });
+      this.setState({
+        messageStatus: "success"
+      });
       this.resetForm();
     } else if (response.data.msg === "fail") {
-      this.setState({ messageStatus: "Uh. Oh. Message failed to send." });
+      this.setState({
+        messageStatus: "fail"
+      });
     }
   };
 
@@ -51,14 +55,27 @@ class Contact extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
+    const messageStatus = this.state.messageStatus;
     const mailData = {
       name: this.state.name,
       email: this.state.email,
       subject: this.state.subject,
       message: this.state.message
     };
-    this.sendMail(mailData);
+    if (messageStatus === "new" || messageStatus === "missing") {
+      if (
+        mailData.name &&
+        mailData.email &&
+        mailData.subject &&
+        mailData.message
+      ) {
+        this.sendMail(mailData);
+      } else {
+        this.setState({ messageStatus: "missing" });
+      }
+    } else if (messageStatus === "success" || messageStatus === "fail") {
+      this.setState({ messageStatus: "new" });
+    }
 
     //Note. These might be changed to type const name = document.getElementById('name').value if state
     //not used in the checking portions.
@@ -70,10 +87,52 @@ class Contact extends React.Component {
   }
 
   render() {
-    const styles = {
+    const iconStyles = {
       width: "14px",
       height: "14px"
     };
+
+    const messageStatus = this.state.messageStatus;
+    let formMessage;
+    let buttonIcon;
+    let buttonMessage;
+    let buttonId;
+
+    switch (messageStatus) {
+      case "new":
+        formMessage = "Fill out all fields before sending.";
+        buttonIcon = "dove";
+        buttonMessage = " Contact Patrick";
+        buttonId = "btn-contact-new";
+        break;
+
+      case "missing":
+        formMessage = "Fill out the highlighted fields and send again.";
+        buttonIcon = "dove";
+        buttonMessage = " Contact Patrick";
+        buttonId = "btn-contact-missing";
+        break;
+
+      case "success":
+        formMessage =
+          "Message sent! Click 'Contact Again' button for a new form. ";
+        buttonIcon = "sun";
+        buttonMessage = " Contact Again";
+        buttonId = "btn-contact-success";
+        break;
+
+      case "fail":
+        formMessage = "Uh. Oh. There was a problem. please try again later.";
+        buttonIcon = "cloud-rain";
+        buttonMessage = " Run Dorothy";
+        buttonId = "btn-contact-missing";
+        break;
+
+      default:
+        formMessage = "Fill out all fields before sending.";
+        buttonIcon = "dove";
+    }
+
     return (
       <Wrapper>
         <SectionTitle
@@ -91,8 +150,9 @@ class Contact extends React.Component {
             from you!`}
           </p>
 
-          <p className="section-paragraph">
-            <span>{`Contact Form: `}</span> {this.state.messageStatus}
+          <p className="section-paragraph" id="form-message-paragrpah">
+            <span>{`Contact Form: `}</span>
+            {formMessage}
           </p>
           <div className="contact-container">
             <form id="contact-form" onSubmit={this.handleSubmit} method="POST">
@@ -150,13 +210,13 @@ class Contact extends React.Component {
                   </small>
                 </div>
               </div>
-              <button type="submit" className="btn-contact">
+              <button type="submit" className="btn-contact" id={buttonId}>
                 <FontAwesomeIcon
                   className="fa-icon"
-                  icon="dove"
-                  style={styles}
+                  icon={buttonIcon}
+                  style={iconStyles}
                 />
-                <span>{` Contact Patrick!`}</span>
+                <span>{buttonMessage}</span>
               </button>
             </form>
           </div>
