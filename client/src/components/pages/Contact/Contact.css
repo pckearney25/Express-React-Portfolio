@@ -96,14 +96,14 @@ small {
 }
 
 #btn-contact-new {
-  color: #eec643;
-  background-color: #4f1192;
+  color: #4f1192;
+  background-color: #eec643;
 }
 #btn-contact-new:hover,
 #btn-contact-new:focus,
 #btn-contact-new:active {
-  color: #4f1192;
-  background-color: #eec643;
+  color: #eec643;
+  background-color: #4f1192;
 }
 
 #btn-contact-missing {
@@ -117,18 +117,20 @@ small {
   background-color: red;
 }
 
-#btn-contact-success {
-  color: yellow;
-  background-color: green;
-}
-#btn-contact-success:hover,
-#btn-contact-success:focus,
-#btn-contact-success:active {
-  color: green;
-  background-color: yellow;
-}
 #contact-addendum {
   font-size: 1.1em;
+}
+
+#mail-response-image-div {
+  margin: 20px 20px 20px 20px;
+}
+
+#mail-response-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 425px;
+  border-radius: 0.25em;
+  border: 1px solid #58b041;
 }
 
 @media all and (max-width: 542px) {

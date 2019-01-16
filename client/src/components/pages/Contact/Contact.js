@@ -13,7 +13,7 @@ class Contact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      messageStatus: "fail", //options: new, missing, success, or fail.
+      messageStatus: "new", //options: new, missing, success, or fail.
       name: "",
       email: "",
       subject: "",
@@ -92,6 +92,7 @@ class Contact extends React.Component {
     };
     //variables used for dynamic CSS styling
     const messageStatus = this.state.messageStatus;
+    let mailImgSrc;
     let formMessage;
     let formMessageStyle;
     let buttonIcon;
@@ -105,18 +106,31 @@ class Contact extends React.Component {
     let emailInputStyle;
     let subjectInputStyle;
     let bodyInputStyle;
+    let formInfoDisplay;
 
     switch (messageStatus) {
       case "new":
-        formMessage = "Fill out all fields before sending.";
+        mailImgSrc = require("../../../assets/images/wildflowers1.jpg");
+        formMessage = "Complete all fields before sending.";
         buttonIcon = "dove";
         buttonMessage = " Contact Patrick";
         buttonId = "btn-contact-new";
+
+        if (
+          this.state.name &&
+          this.state.email &&
+          this.state.subject &&
+          this.state.message
+        ) {
+          formMessage = "Ready to send!";
+          formMessageStyle = { color: "#58b041", fontWeight: "bold" };
+        }
         break;
 
       case "missing":
-        formMessage = "Fill out the red highlighted fields and resubmit.";
-        buttonIcon = "dove";
+        mailImgSrc = require("../../../assets/images/tornado1.jpg");
+        formMessage = "Compete the missing fields (red) and resubmit.";
+        buttonIcon = "cloud-rain";
         buttonMessage = " Contact Patrick";
         formMessageStyle = { color: "red", fontWeight: "bold" };
         buttonId = "btn-contact-missing";
@@ -136,20 +150,38 @@ class Contact extends React.Component {
           bodyLabelStyle = { color: "red" };
           bodyInputStyle = { borderColor: "red" };
         }
+
+        if (
+          this.state.name &&
+          this.state.email &&
+          this.state.subject &&
+          this.state.message
+        ) {
+          mailImgSrc = require("../../../assets/images/wildflowers1.jpg");
+          formMessage = "Ready to send!";
+          formMessageStyle = { color: "#58b041", fontWeight: "bold" };
+          buttonIcon = "dove";
+          buttonMessage = " Contact Patrick";
+          buttonId = "btn-contact-new";
+        }
         break;
 
       case "success":
+        mailImgSrc = require("../../../assets/images/wildflowers2.jpg");
         formMessage =
           "Message sent. Click 'Contact Again' button for a new form. ";
         formMessageStyle = { color: "#58b041", fontWeight: "bold" };
+        formInfoDisplay = { display: "none" };
         buttonIcon = "sun";
         buttonMessage = " Contact Again";
-        buttonId = "btn-contact-success";
+        buttonId = "btn-contact-new";
         break;
 
       case "fail":
-        formMessage = "Uh. Oh. There was a problem. please try again later.";
+        mailImgSrc = require("../../../assets/images/tornado2.jpg");
+        formMessage = "Uh-oh. There was a problem. Please try again later.";
         formMessageStyle = { color: "red", fontWeight: "bold" };
+        formInfoDisplay = { display: "none" };
         buttonIcon = "cloud-rain";
         buttonMessage = " Run Dorothy";
         buttonId = "btn-contact-missing";
@@ -184,8 +216,15 @@ class Contact extends React.Component {
             </span>
           </p>
           <div className="contact-container">
+            <div id="mail-response-image-div">
+              <img
+                id="mail-response-image"
+                src={mailImgSrc}
+                alt="mail response"
+              />
+            </div>
             <form id="contact-form" onSubmit={this.handleSubmit} method="POST">
-              <div id="form-info-container">
+              <div id="form-info-container" style={formInfoDisplay}>
                 <div className="form-group">
                   <label
                     htmlFor="contact-name"
