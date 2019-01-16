@@ -33,7 +33,7 @@ module.exports = {
     //Composes the mail message
     var mail = {
       from: name,
-      to: `"RECEIVING_EMAIL_ADDRESS_GOES_HERE"`, //Change to email address that you want to receive messages on
+      //to: `"RECEIVING_EMAIL_ADDRESS_GOES_HERE"`, //Change to email address that you want to receive messages on
       subject: subject,
       text: content
     };

@@ -13,7 +13,7 @@ class Contact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      messageStatus: "fail",
+      messageStatus: "fail", //options: new, missing, success, or fail.
       name: "",
       email: "",
       subject: "",
@@ -31,12 +31,12 @@ class Contact extends React.Component {
       this.setState({
         messageStatus: "success"
       });
-      this.resetForm();
     } else if (response.data.msg === "fail") {
       this.setState({
         messageStatus: "fail"
       });
     }
+    this.resetForm();
   };
 
   sendMail = mailData => {
@@ -62,6 +62,9 @@ class Contact extends React.Component {
       subject: this.state.subject,
       message: this.state.message
     };
+
+    //Checks that all fields are filled before sending mail.
+    //If nodemailer has responded (succes/fail), sets up for a new message.
     if (messageStatus === "new" || messageStatus === "missing") {
       if (
         mailData.name &&
@@ -76,10 +79,6 @@ class Contact extends React.Component {
     } else if (messageStatus === "success" || messageStatus === "fail") {
       this.setState({ messageStatus: "new" });
     }
-
-    //Note. These might be changed to type const name = document.getElementById('name').value if state
-    //not used in the checking portions.
-    //TODO: Will add client side checking to ensure field completion and CSS changes later.
   }
 
   resetForm() {
@@ -91,12 +90,21 @@ class Contact extends React.Component {
       width: "14px",
       height: "14px"
     };
-
+    //variables used for dynamic CSS styling
     const messageStatus = this.state.messageStatus;
     let formMessage;
+    let formMessageStyle;
     let buttonIcon;
     let buttonMessage;
     let buttonId;
+    let nameLabelStyle;
+    let emailLabelStyle;
+    let subjectLabelStyle;
+    let bodyLabelStyle;
+    let nameInputStyle;
+    let emailInputStyle;
+    let subjectInputStyle;
+    let bodyInputStyle;
 
     switch (messageStatus) {
       case "new":
@@ -107,15 +115,33 @@ class Contact extends React.Component {
         break;
 
       case "missing":
-        formMessage = "Fill out the highlighted fields and send again.";
+        formMessage = "Fill out the red highlighted fields and resubmit.";
         buttonIcon = "dove";
         buttonMessage = " Contact Patrick";
+        formMessageStyle = { color: "red", fontWeight: "bold" };
         buttonId = "btn-contact-missing";
+        if (!this.state.name) {
+          nameLabelStyle = { color: "red" };
+          nameInputStyle = { borderColor: "red" };
+        }
+        if (!this.state.email) {
+          emailLabelStyle = { color: "red" };
+          emailInputStyle = { borderColor: "red" };
+        }
+        if (!this.state.subject) {
+          subjectLabelStyle = { color: "red" };
+          subjectInputStyle = { borderColor: "red" };
+        }
+        if (!this.state.message) {
+          bodyLabelStyle = { color: "red" };
+          bodyInputStyle = { borderColor: "red" };
+        }
         break;
 
       case "success":
         formMessage =
-          "Message sent! Click 'Contact Again' button for a new form. ";
+          "Message sent. Click 'Contact Again' button for a new form. ";
+        formMessageStyle = { color: "#58b041", fontWeight: "bold" };
         buttonIcon = "sun";
         buttonMessage = " Contact Again";
         buttonId = "btn-contact-success";
@@ -123,6 +149,7 @@ class Contact extends React.Component {
 
       case "fail":
         formMessage = "Uh. Oh. There was a problem. please try again later.";
+        formMessageStyle = { color: "red", fontWeight: "bold" };
         buttonIcon = "cloud-rain";
         buttonMessage = " Run Dorothy";
         buttonId = "btn-contact-missing";
@@ -152,54 +179,84 @@ class Contact extends React.Component {
 
           <p className="section-paragraph" id="form-message-paragrpah">
             <span>{`Contact Form: `}</span>
-            {formMessage}
+            <span id="form-message-span" style={formMessageStyle}>
+              {formMessage}
+            </span>
           </p>
           <div className="contact-container">
             <form id="contact-form" onSubmit={this.handleSubmit} method="POST">
               <div id="form-info-container">
                 <div className="form-group">
-                  <label htmlFor="contact-name">Name:</label>
+                  <label
+                    htmlFor="contact-name"
+                    id="contact-name-label"
+                    style={nameLabelStyle}
+                  >
+                    Name:
+                  </label>
                   <input
                     name="name"
                     value={this.state.name}
                     type="text"
                     className="form-control"
                     id="contact-name"
+                    style={nameInputStyle}
                     placeholder="e.g. Patrick Mahomes"
                     onChange={this.handleInputChange}
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="contact-email">Email address:</label>
+                  <label
+                    htmlFor="contact-email"
+                    id="contact-email-label"
+                    style={emailLabelStyle}
+                  >
+                    Email address:
+                  </label>
                   <input
                     name="email"
                     value={this.state.email}
                     type="email"
                     className="form-control"
                     id="contact-email"
+                    style={emailInputStyle}
                     placeholder="e.g. pmahomes@coding.com"
                     onChange={this.handleInputChange}
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="contact-subject">Subject:</label>
+                  <label
+                    htmlFor="contact-subject"
+                    id="contact-subject-label"
+                    style={subjectLabelStyle}
+                  >
+                    Subject:
+                  </label>
                   <input
                     name="subject"
                     value={this.state.subject}
                     className="form-control"
                     type="text"
                     id="contact-subject"
+                    style={subjectInputStyle}
                     placeholder="e.g. Networking Telecon"
                     onChange={this.handleInputChange}
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="contact-body">Message:</label>
+                  <label
+                    htmlFor="contact-body"
+                    id="contact-body-label"
+                    style={bodyLabelStyle}
+                  >
+                    Message:
+                  </label>
                   <textarea
                     name="message"
                     value={this.state.message}
                     className="form-control"
                     id="contact-body"
+                    style={bodyInputStyle}
                     rows="10"
                     placeholder="Type message here."
                     onChange={this.handleInputChange}
