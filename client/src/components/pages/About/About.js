@@ -52,7 +52,9 @@ class About extends React.Component {
           </p>
 
           <p className="section-paragraph">
-            <span>Technical Resume and Scientific CV: </span>
+            <span>{`Technical Resume and Scientific CV: `}</span>
+            {`(Links will open in
+            new windows.)`}
           </p>
           <ul className="section-list">
             <li>

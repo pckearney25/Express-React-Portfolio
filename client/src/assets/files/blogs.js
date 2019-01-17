@@ -3,6 +3,7 @@ import Post1 from "../../components/posts/Post1";
 import Post2 from "../../components/posts/Post2";
 import Post3 from "../../components/posts/Post3";
 
+//Information to be passed into mapped BlogPost components on Blog Page.
 export default [
   {
     id: 3,

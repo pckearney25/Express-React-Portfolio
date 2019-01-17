@@ -1,20 +1,23 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
+//CSS styling for the ReactFontAwesome icons.
 const styles = {
   width: "26px",
   height: "26px"
 };
+
+//Information to be passed into mapped PortfolioTimeline Component on Portfolio Page.
 export default [
   {
     id: "0",
-    date: "November 2018",
+    date: "January 2019",
     title: "Express-React Portfolio",
     description: "My New Personal Website Created with Express-React-Node",
     highlights:
       "React, Express, Form Submission via Nodemailer, Media Responsive, ReactCSSTransitionGroup, ReactVerticalTimeline, ReactFontAwesome, CSS Flexbox.",
     deployed: "https://pckearney.com",
-    repo: "https://github.com/pckearney25/React-Portfolio",
+    repo: "https://github.com/pckearney25/Express-React-Portfolio",
     imgSrc: require("../../assets/images/portfolio.jpg"),
     icon: (
       <FontAwesomeIcon

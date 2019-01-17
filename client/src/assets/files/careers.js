@@ -6,6 +6,7 @@ const styles = {
   height: "26px"
 };
 
+//Career informarion to be passed into WorkTimeline component on About page.
 export default [
   {
     id: "0",

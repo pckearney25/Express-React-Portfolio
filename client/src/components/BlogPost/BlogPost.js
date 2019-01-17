@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../assets/css/Blog.css";
 
+//Codes for the component that generates the blog summary on the Blog page.
 class BlogPost extends React.Component {
   render() {
     return (

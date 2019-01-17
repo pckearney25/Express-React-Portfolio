@@ -3,7 +3,6 @@ const creds = require("../config/config");
 
 //Pass credentials to the SMPT transport.
 var transport = {
-  //host: "smtp.gmail.com",
   service: "Outlook365",
   auth: {
     user: creds.USER,
@@ -11,6 +10,7 @@ var transport = {
   }
 };
 
+//set up the connection to the service and verify credentials are in order.
 var transporter = nodemailer.createTransport(transport);
 
 transporter.verify((error, success) => {
@@ -21,6 +21,7 @@ transporter.verify((error, success) => {
   }
 });
 
+//export the function for processing the request and sending it to the SMTP server.
 module.exports = {
   sendNodeMail: function(req, res, next) {
     //Parses the incoming resquest

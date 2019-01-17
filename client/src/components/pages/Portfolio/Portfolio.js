@@ -22,7 +22,8 @@ class Portfolio extends React.Component {
           projects that I've enjoyed working on. These span a range from a
           simple JavaScript game to a full-stack MERN application with user
           authentication. I try to place an emphasis on providing a clean user
-          interface and an enjoyable user experience.
+          interface and an enjoyable user experience. Links to project code and
+          deployed applications will open in new windows.
         </p>
 
         <p className="section-paragraph">
