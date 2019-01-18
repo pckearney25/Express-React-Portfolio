@@ -39,6 +39,7 @@ class NewPost extends React.Component {
                   <a
                     className="blog-link"
                     href="https://www.amazon.com/Joyful-Surprising-Ordinary-Extraordinary-Happiness/dp/0316399264/ref=asc_df_0316399264/?tag=hyprod-20&linkCode=df0&hvadid=312178271755&hvpos=1o1&hvnetw=g&hvrand=2843462324686165385&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9023227&hvtargid=aud-467077737785:pla-523437063811&psc=1&tag=&ref=&adgrpid=60258871377&hvpone=&hvptwo=&hvadid=312178271755&hvpos=1o1&hvnetw=g&hvrand=2843462324686165385&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9023227&hvtargid=aud-467077737785:pla-523437063811"
+                    target={"_blank"}
                   >
                     {`“Joyful: The Surprising Power of Ordinary Things to Create Extraordinary Happiness”`}
                   </a>
@@ -46,6 +47,7 @@ class NewPost extends React.Component {
                   <a
                     className="blog-link"
                     href="https://www.npr.org/programs/ted-radio-hour/668359164/where-joy-hides"
+                    target={"_blank"}
                   >{`TED Radio Hour`}</a>
                   {`. It has been a very pleasant experience.`}
                 </p>
@@ -55,11 +57,13 @@ class NewPost extends React.Component {
                   <a
                     className="blog-link"
                     href="https://bee-z-street.herokuapp.com/login"
+                    target={"_blank"}
                   >{`Bee-Z-Street`}</a>
                   {`, a coding team project I had done with `}
                   <a
                     className="blog-link"
                     href="https://www.samanthamccallfp18.com/"
+                    target={"_blank"}
                   >{`Samantha McCall`}</a>
                   {` and two other students during coding class last spring, have been so positive when we have shown it around informally.  At this point Bee-Z-Street is little more than a student demonstration project: you sign up, enter a short list of parameters about your yard (sun, soil, water), and get a list of (Midwest) native plants. There is a rudimentary garden design feature, and for each plant you get information on the pollinators that visit the plant. `}
                 </p>
@@ -69,6 +73,7 @@ class NewPost extends React.Component {
                   <a
                     className="blog-link"
                     href="https://www.amazon.com/Pollinators-Native-Plants-Identify-Beneficial/dp/0991356306/ref=asc_df_0991356306/?tag=hyprod-20&linkCode=df0&hvadid=312014159412&hvpos=1o1&hvnetw=g&hvrand=13051730183009903998&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9023227&hvtargid=aud-467077737785:pla-567916679211&psc=1"
+                    target={"_blank"}
                   >
                     {`“Pollinators of Native Plants”`}
                   </a>{" "}
