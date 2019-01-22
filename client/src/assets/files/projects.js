@@ -16,7 +16,7 @@ export default [
     description: "My New Personal Website Created with Express-React-Node",
     highlights:
       "React, Express, Form Submission via Nodemailer, Media Responsive, ReactCSSTransitionGroup, ReactVerticalTimeline, ReactFontAwesome, CSS Flexbox.",
-    deployed: "https://pckearney.com",
+    deployed: "https://pckearney.herokuapp.com",
     repo: "https://github.com/pckearney25/Express-React-Portfolio",
     imgSrc: require("../../assets/images/portfolio.jpg"),
     icon: (
