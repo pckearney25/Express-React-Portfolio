@@ -2,9 +2,20 @@ import Post0 from "../../components/posts/Post0";
 import Post1 from "../../components/posts/Post1";
 import Post2 from "../../components/posts/Post2";
 import Post3 from "../../components/posts/Post3";
+import Post4 from "../../components/posts/Post4";
 
 //Information to be passed into mapped BlogPost components on Blog Page.
 export default [
+  {
+    id: 4,
+    date: "Published January 28, 2019",
+    title: "Learning to Fold ‘em",
+    teaser:
+      "As a beginning web-developer, my time is too valuable to solve every technical challenge.",
+    imgSrc: require("../../assets/images/post-images/poker.jpg"),
+    link: "/blogpost-4",
+    component: Post4
+  },
   {
     id: 3,
     date: "Published December 28, 2018",

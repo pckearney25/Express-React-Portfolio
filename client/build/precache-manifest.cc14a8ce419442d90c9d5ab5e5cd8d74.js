@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "8389d9520ce05be1f873",
-    "url": "/static/css/main.249c5d25.chunk.css"
+    "revision": "32abca0325b537c06856",
+    "url": "/static/css/main.74d0a55d.chunk.css"
   },
   {
-    "revision": "8389d9520ce05be1f873",
-    "url": "/static/js/main.8389d952.chunk.js"
+    "revision": "32abca0325b537c06856",
+    "url": "/static/js/main.32abca03.chunk.js"
   },
   {
-    "revision": "76912420682f74b164da",
-    "url": "/static/js/1.76912420.chunk.js"
+    "revision": "5d9f81ae7b132acca0cc",
+    "url": "/static/js/1.5d9f81ae.chunk.js"
   },
   {
     "revision": "229c360febb4351a89df",
@@ -34,6 +34,10 @@ self.__precacheManifest = [
   {
     "revision": "82d9576abcd8988f3dcfced00fb4dd2d",
     "url": "/static/media/confetti.82d9576a.jpg"
+  },
+  {
+    "revision": "7abccb6bccf076a4c50a140ceabd52a7",
+    "url": "/static/media/poker.7abccb6b.jpg"
   },
   {
     "revision": "e4a5d13d41ff7cd6c7db8e9b6ef8a54c",
@@ -112,7 +116,7 @@ self.__precacheManifest = [
     "url": "/static/media/rudbeckia.9df2ebf4.jpg"
   },
   {
-    "revision": "d5bfc5c89d1e6cc73683292c95f47358",
+    "revision": "23c196e928bbc2a0a251795ab68f7baa",
     "url": "/index.html"
   }
 ];
